@@ -10,7 +10,7 @@ angular.module('ionic.weather', ['ionic', 'ionic.weather.services', 'ionic.weath
   return function(v) {
     return parseInt(v) || '';
   };
-})
+})   
 
 .controller('WeatherCtrl', function($scope, $timeout, $rootScope, Weather, Geo, Flickr, $ionicModal, $ionicPlatform) {
   var _this = this;
@@ -20,6 +20,7 @@ angular.module('ionic.weather', ['ionic', 'ionic.weather.services', 'ionic.weath
     if(window.StatusBar) {
       StatusBar.hide();
     }
+      $scope.refreshData();
   });
 
   $scope.activeBgImageIndex = 0;
@@ -93,7 +94,7 @@ angular.module('ionic.weather', ['ionic', 'ionic.weather.services', 'ionic.weath
     });
   };
 
-  $scope.refreshData();
+
 })
 
 .controller('SettingsCtrl', function($scope, Settings) {
